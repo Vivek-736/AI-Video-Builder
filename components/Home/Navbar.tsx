@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <nav className="flex justify-between items-center p-4 sticky top-0 bg-background/50 backdrop-blur-2xl shadow-md dark:shadow-white">
       <div className="md:text-4xl text-2xl flex items-center font-medium">
-        <div className="flex gap-3">
+        <div className="flex gap-3 items-center">
           <Image src="/logo.png" alt="logo" width={42} height={42} />
           <div>
             Vid<span className="text-blue-500 font-bold">Genius</span>

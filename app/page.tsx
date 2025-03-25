@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen">   
+      <div className="min-h-screen bg-slate-200 dark:bg-gray-900">   
 
       </div>
       <Footer />
