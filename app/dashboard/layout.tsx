@@ -5,7 +5,7 @@ import Header from '@/components/Dashboard/Header';
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
     return (
         <div>
-            <div className='hidden md:block h-screen bg-indigo-200 dark:bg-indigo-900 fixed w-64 mt-[68px]'>
+            <div className='hidden md:block h-screen bg-gray-200  dark:bg-gray-900 fixed w-64 mt-[68px]'>
                 <Sidebar />
             </div>
             <div>
