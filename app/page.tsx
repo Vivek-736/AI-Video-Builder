@@ -52,7 +52,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <Navbar />
       <main className="flex-grow bg-slate-50 dark:bg-gray-900 transition-colors duration-300">
-        <AnimatedSection className="relative overflow-hidden py-20 md:py-28 bg-gradient-to-b from-purple-50 to-white dark:from-purple-900/20 dark:to-gray-900">
+        <AnimatedSection className="relative overflow-hidden py-20 md:py-24 bg-gradient-to-b from-purple-50 to-white dark:from-purple-900/20 dark:to-gray-900">
           <div className="container px-4 mx-auto relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 items-center px-8 lg:gap-6 gap-12">
               <motion.div variants={fadeIn} className="space-y-6">

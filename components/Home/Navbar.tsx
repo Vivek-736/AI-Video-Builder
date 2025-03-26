@@ -11,7 +11,7 @@ const Navbar = () => {
   const { isSignedIn } = useAuth();
 
   return (
-    <nav className="flex justify-between items-center p-4 top-0 bg-background/50 backdrop-blur-2xl shadow-2xl border-b-2 border-purple-400 dark:border-b-0 dark:shadow-md dark:shadow-white">
+    <nav className="flex justify-between items-center p-4 sticky z-50 top-0 bg-background/50 backdrop-blur-md shadow-xl border-b-2 border-purple-400 dark:border-b-0 dark:shadow-md dark:shadow-white">
       <div className="md:text-4xl text-2xl flex items-center font-medium">
         <div className="flex gap-3 items-center">
           <Image src="/logo.png" alt="logo" width={42} height={42} />
