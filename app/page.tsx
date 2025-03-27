@@ -222,21 +222,21 @@ export default function Home() {
               {[
                 {
                   quote:
-                    "This tool has completely transformed how we create marketing videos. What used to take days now takes minutes.",
+                    "This tool has completely changed the way I create videos. It's so easy to use and the results are amazing.",
                   name: "Tony Stark",
                   title: "Tech Entrepreneur",
                   avatar: testimonialImages[0],
                 },
                 {
                   quote:
-                    "As a content creator, I need to produce videos quickly. This AI tool has been a game-changer for my workflow.",
+                    "As a content creator, I need to produce videos quickly. This AI tool has been a game-changer for an old guy like me.",
                   name: "Steve Rogers",
                   title: "Captain America",
                   avatar: testimonialImages[1],
                 },
                 {
                   quote:
-                    "The quality of videos I can create with this tool is incredible. My clients are always impressed with the results.",
+                    "The quality of videos I can create with this tool is incredible. My people are always impressed with the results.",
                   name: "Thor",
                   title: "God of Thunder",
                   avatar: testimonialImages[2],
