@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const EmptyState = () => {
   return (
@@ -25,7 +26,9 @@ const EmptyState = () => {
       <p className="text-gray-500 dark:text-gray-400 mb-4">
         Get started by creating your first video
       </p>
-      <Button className="cursor-pointer" variant={"custom"}>Create one</Button>
+      <Link href={"/create"}>
+        <Button className="cursor-pointer" variant={"custom"}>Create one</Button>
+      </Link>
     </div>
   );
 };

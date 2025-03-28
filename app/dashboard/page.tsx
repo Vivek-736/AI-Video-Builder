@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Plus } from "lucide-react";
 import EmptyState from "@/components/Dashboard/EmptyState";
+import Link from "next/link";
 
 
 const DashboardPage = () => {
@@ -15,9 +16,11 @@ const DashboardPage = () => {
           <h2 className="font-bold text-2xl text-indigo-400 dark:text-indigo-600">
             Dashboard
           </h2>
-          <Button className="cursor-pointer">
-            <Plus className="text-white dark:text-black font-bold" /> Create New
-          </Button>
+          <Link href="/create">
+            <Button className="cursor-pointer">
+              <Plus className="text-white dark:text-black font-bold" /> Create New
+            </Button>
+          </Link>
         </div>
         <div className="p-6">
           {videoList?.length == 0 &&
