@@ -16,7 +16,7 @@ const DashboardPage = () => {
           <h2 className="font-bold text-2xl text-indigo-400 dark:text-indigo-600">
             Dashboard
           </h2>
-          <Link href="/create">
+          <Link href="dashboard/create">
             <Button className="cursor-pointer">
               <Plus className="text-white dark:text-black font-bold" /> Create New
             </Button>

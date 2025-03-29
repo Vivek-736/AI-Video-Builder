@@ -26,7 +26,7 @@ const EmptyState = () => {
       <p className="text-gray-500 dark:text-gray-400 mb-4">
         Get started by creating your first video
       </p>
-      <Link href={"/create"}>
+      <Link href={"dashboard/create"}>
         <Button className="cursor-pointer" variant={"custom"}>Create one</Button>
       </Link>
     </div>

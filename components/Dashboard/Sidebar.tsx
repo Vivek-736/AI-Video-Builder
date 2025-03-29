@@ -13,7 +13,7 @@ const sidebarElements = [
   },
   {
     name: "Create New",
-    href: "/create",
+    href: "/dashboard/create",
     icon: PlusCircle,
   },
 ];
