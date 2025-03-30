@@ -6,7 +6,7 @@ import { Poppins } from 'next/font/google';
 import { ThemeProvider } from "@/components/providers/theme-provider";
 
 export const metadata: Metadata = {
-  title: "VidGenius - An AI powered video generator",
+  title: "VidGenius - AI powered video generator",
   description: "VidGenius is an AI powered video creating SAAS that allows you to create videos with ease.",
 };
 

@@ -23,7 +23,7 @@ const Sidebar = () => {
   const pathname = usePathname();
 
   return (
-    <aside className="h-screen w-64 border-r border-gray-400 dark:border-gray-800 shadow-lg p-5 flex flex-col">
+    <aside className="h-screen sticky left-0 w-64 border-r border-gray-400 dark:border-gray-800 shadow-lg p-5 flex flex-col">
       <div className="flex flex-col items-center pb-6 border-b border-muted/40">
         <Avatar className="w-16 h-16 mb-3">
           <AvatarImage src={user?.imageUrl} alt={user?.fullName || "Guest"} />

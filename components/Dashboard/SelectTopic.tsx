@@ -1,5 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 "use client";
-
 import React, { useState } from "react";
 import { ArrowBigRight } from "lucide-react";
 import {
@@ -11,7 +11,11 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "../ui/textarea";
 
-const SelectTopic = () => {
+interface SelectTopicProps {
+  onUserSelect: (fieldName: string, fieldValue: string) => void;
+}
+
+const SelectTopic = ({ onUserSelect }: SelectTopicProps) => {
   const options = [
     "Motivational Story",
     "Funny Story",
@@ -37,7 +41,10 @@ const SelectTopic = () => {
           </div>
         </div>
         <div>
-          <Select onValueChange={(value) => setSelectedOption(value)}>
+          <Select onValueChange={(value) => {
+            setSelectedOption(value)
+              value != "Custom Prompt" && onUserSelect('topic', value)
+            }}>
             <SelectTrigger className="w-full mt-2 p-6 text-lg cursor-pointer">
               <SelectValue placeholder="Video Theme" />
             </SelectTrigger>
@@ -52,7 +59,10 @@ const SelectTopic = () => {
         </div>
       </div>
       {selectdOption === "Custom Prompt" && (
-        <Textarea className="mt-4 border-2" placeholder="Write Your Custom Prompt" />
+        <Textarea className="mt-4 border-2" 
+          onChange={(e) => onUserSelect('topic', e.target.value)}
+          placeholder="Write Your Custom Prompt"        
+        />
       )}
     </div>
   );
