@@ -1,5 +1,4 @@
 "use client";
-
 import Image from "next/image";
 import React, { useState } from "react";
 
@@ -57,10 +56,10 @@ const SelectType = ({ onUserSelect }: SelectTypeProps) => {
                         height={100}
                         className="rounded-lg border-2 border-white h-32 object-cover w-full"
                         onClick={() => 
-                            {
-                                setSelectedOption(option.name)
-                                onUserSelect('videoStyle', option.name)
-                            }
+                          {
+                            setSelectedOption(option.name)
+                            onUserSelect('videoStyle', option.name)
+                          }
                         }
                     />
                 </div>
