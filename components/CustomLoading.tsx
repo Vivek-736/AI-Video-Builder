@@ -17,8 +17,8 @@ const CustomLoading = ({ loading }: CustomLoadingProps) => {
       <AlertDialogTitle></AlertDialogTitle>
       <AlertDialogContent>
         <div className="flex flex-col items-center justify-center my-6">
-            <Image src={'/loading.gif'} width={200} height={200} alt="loading gif" />
-            <h2>Generating... Please wait a moment...</h2>
+            <Image className="rounded-full" src={'/loading.gif'} width={200} height={200} alt="loading gif" />
+            <h2 className="mt-4">Generating... Please wait a moment...</h2>
         </div>
       </AlertDialogContent>
     </AlertDialog>
