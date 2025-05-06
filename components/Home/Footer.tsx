@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import { motion, Variants, useScroll, useTransform } from 'framer-motion';
 
@@ -98,7 +99,7 @@ const Footer: React.FC = () => {
           variants={textVariants}
           whileHover="hover"
         >
-          Crafted with{' '}
+          Engraved with{' '}
           <motion.span
             className="inline-block"
             variants={heartVariants}
@@ -107,17 +108,6 @@ const Footer: React.FC = () => {
             💖
           </motion.span>{' '}
           by Vivek
-        </motion.div>
-        <motion.div
-          className="mt-4 flex flex-col sm:flex-row gap-2 sm:gap-6 text-sm sm:text-base opacity-80"
-          variants={textVariants}
-        >
-        </motion.div>
-        <motion.div
-          className="mt-4 text-xs sm:text-sm opacity-60"
-          variants={textVariants}
-        >
-          © {new Date().getFullYear()} Vivek. All Rights Reserved.
         </motion.div>
       </div>
     </motion.footer>
