@@ -30,8 +30,8 @@ const Sidebar = () => {
           <AvatarFallback>{user?.fullName?.charAt(0) || "G"}</AvatarFallback>
         </Avatar>
         
-        <h2 className="text-xl font-semibold tracking-tight text-primary">Welcome</h2>
-        <span className="text-indigo-600 dark:text-indigo-400 text-2xl font-extrabold italic">{user?.fullName || "Guest"}</span>
+        <h2 className="text-xl font-semibold tracking-tight uppercase text-primary">Welcome</h2>
+        <span className="text-indigo-600 dark:text-indigo-400 text-2xl uppercase font-extrabold">{user?.fullName || "Guest"}</span>
       </div>
 
       <nav className="flex flex-col gap-3 mt-6">
