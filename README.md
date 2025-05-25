@@ -11,6 +11,7 @@ Welcome to the **AI Video Builder**! This application leverages cutting-edge tec
 - **Shadcn**: A component library for building beautiful UIs.
 - **Gemini API**: A powerful API for video processing.
 - **Drizzle ORM**: A lightweight TypeScript ORM for database interactions.
+- **Google Cloud Text-to-Speech API**: Converts text into natural-sounding speech using deep learning models.
 
 ## 📑 Features
 
@@ -19,4 +20,22 @@ Welcome to the **AI Video Builder**! This application leverages cutting-edge tec
 - ⚡ Fast and efficient processing
 - 🔒 Secure authentication and user management
 
-Happy building! 🎉
+
+## 🛠️ Getting Started
+
+```bash
+# Clone the repository
+git clone https://github.com/Vivek-736/Real-Sync.git
+
+# Navigate into the project directory
+cd real-sync
+
+# Install dependencies
+npm install
+
+# If you encounter dependency issues, try:
+npm install --legacy-peer-deps
+
+# Run the development server
+npm run dev
+```
