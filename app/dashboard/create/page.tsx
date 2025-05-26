@@ -1,12 +1,15 @@
 "use client";
-import React, { useState } from 'react'
+
 import axios from 'axios';
+import { v4 as uuidv4 } from 'uuid';
+import React, { useState } from 'react'
 import SelectTopic from '@/components/Dashboard/SelectTopic'
 import BackButton from '@/components/Dashboard/BackButton';
 import SelectType from '@/components/Dashboard/SelectType';
 import SelectDuration from '@/components/Dashboard/SelectDuration';
 import { Button } from '@/components/ui/button';
 import CustomLoading from '@/components/CustomLoading';
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
@@ -39,11 +42,42 @@ const CreatePage = () => {
             prompt: prompt 
         })
         .then(res => {
-            console.log(res.data);
-            setVideoScript(res.data);
+            console.log(res.data.Result);
+            setVideoScript(res.data.Result);
+            GenerateAudioFile(res.data.Result);
         })
         setLoading(false);
     }
+
+    const GenerateAudioFile = async (videoScript: any[]) => {
+        setLoading(true);
+        let script = '';
+        const id = uuidv4();
+
+        videoScript.forEach((item: { ContentText: string }) => {
+            const cleanedText = item.ContentText
+                .replace(/\*\*/g, '')
+                .replace(/\*/g, '')
+                .replace(/\([^)]*\)/g, '')
+                .replace(/:/g, '')
+                .replace(/\([^)]*seconds[^)]*\)/gi, '')
+                .replace(/\(Voiceover[^)]*\)/gi, '')         
+                .replace(/\s+/g, ' ')                        
+                .trim();                                     
+            script += cleanedText + ' ';
+        });
+
+        script = script.trim();
+        console.log(script);
+
+        await axios.post(`/api/generate-audio`, {
+            text: script,
+            id: id
+        }).then(res => {
+            console.log(res.data);
+        });
+        setLoading(false);
+    };
 
     return (
         <div className='md:px-20 p-6'>
