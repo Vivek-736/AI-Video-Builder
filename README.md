@@ -12,6 +12,7 @@ Welcome to the **AI Video Builder**! This application leverages cutting-edge tec
 - **Gemini API**: A powerful API for video processing.
 - **Drizzle ORM**: A lightweight TypeScript ORM for database interactions.
 - **Google Cloud Text-to-Speech API**: Converts text into natural-sounding speech using deep learning models.
+- **Assembly AI API**: Generates Captions for the text that is generated.
 
 ## 📑 Features
 
