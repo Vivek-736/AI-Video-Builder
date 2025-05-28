@@ -1,15 +1,15 @@
 import textToSpeech from "@google-cloud/text-to-speech";
 import { NextResponse } from "next/server";
-import * as util from "util";
-import * as fs from "fs";
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
+import { storage } from "@/configs/FirebaseConfig";
 
 const client = new textToSpeech.TextToSpeechClient({
   apiKey: process.env.GOOGLE_API_KEY,
 });
 
 export async function POST(req: Request) {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { text, id } = await req.json();
+  const storageRef = ref(storage, 'ai-video-builder-files/' + id + '.mp3');
 
   const request = {
     input: { text: text },
@@ -20,9 +20,13 @@ export async function POST(req: Request) {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   const [response] = await client.synthesizeSpeech(request);
-  const writeFile = util.promisify(fs.writeFile);
-  await writeFile("output.mp3", response.audioContent, "binary");
-  console.log("Audio content written to file: output.mp3");
+  const audioBuffer = Buffer.from(response.audioContent, 'binary');
 
-  return NextResponse.json({ Result: 'Success' });
+  await uploadBytes(storageRef, audioBuffer, {contentType: 'audio/mp3'});
+
+  const downloadURL = await getDownloadURL(storageRef);
+
+  console.log(downloadURL);
+
+  return NextResponse.json({ Result: downloadURL });
 }

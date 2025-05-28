@@ -9,7 +9,6 @@ import SelectType from '@/components/Dashboard/SelectType';
 import SelectDuration from '@/components/Dashboard/SelectDuration';
 import { Button } from '@/components/ui/button';
 import CustomLoading from '@/components/CustomLoading';
-
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
@@ -17,6 +16,7 @@ const CreatePage = () => {
     const [formData, setFormData] = useState<Record<string, any>>({});
     const [loading, setLoading] = useState(false);
     const [videoScript, setVideoScript] = useState();
+    const [audioFileUrl, setAudioFileUrl] = useState();
 
     const onHandleInputChange = (fieldName: string, fieldValue: string) => {
         setFormData((prev) => {
@@ -74,7 +74,9 @@ const CreatePage = () => {
             text: script,
             id: id
         }).then(res => {
-            console.log(res.data);
+            // console.log(res.data);
+            setAudioFileUrl(res.data.Result);
+            // console.log('Audio File URL:', res.data.Result);
         });
         setLoading(false);
     };
