@@ -26,7 +26,7 @@ Welcome to the **AI Video Builder**! This application leverages cutting-edge tec
 
 ```bash
 # Clone the repository
-git clone https://github.com/Vivek-736/Real-Sync.git
+git clone https://github.com/Vivek-736/AI-Video-Builder
 
 # Navigate into the project directory
 cd real-sync
