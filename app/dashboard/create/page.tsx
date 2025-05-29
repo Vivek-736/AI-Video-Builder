@@ -9,6 +9,7 @@ import SelectType from '@/components/Dashboard/SelectType';
 import SelectDuration from '@/components/Dashboard/SelectDuration';
 import { Button } from '@/components/ui/button';
 import CustomLoading from '@/components/CustomLoading';
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
@@ -17,6 +18,7 @@ const CreatePage = () => {
     const [loading, setLoading] = useState(false);
     const [videoScript, setVideoScript] = useState();
     const [audioFileUrl, setAudioFileUrl] = useState();
+    const [captions, setCaptions] = useState();
 
     const onHandleInputChange = (fieldName: string, fieldValue: string) => {
         setFormData((prev) => {
@@ -76,10 +78,22 @@ const CreatePage = () => {
         }).then(res => {
             // console.log(res.data);
             setAudioFileUrl(res.data.Result);
-            // console.log('Audio File URL:', res.data.Result);
+            console.log('Audio File URL:', res.data.Result);
+            GenerateAudioCaptions(res.data.Result);
         });
         setLoading(false);
     };
+
+    const GenerateAudioCaptions = async (fileUrl: any) => {
+        setLoading(true);
+        await axios.post('/api/generate-captions', {
+            audioFileUrl: fileUrl
+        }).then(res=> {
+            console.log(res.data.Result);
+            setCaptions(res.data.Result);
+        })
+        setLoading(false);
+    }
 
     return (
         <div className='md:px-20 p-6'>
