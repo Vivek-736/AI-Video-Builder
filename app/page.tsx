@@ -73,7 +73,7 @@ export default function Home() {
                     </Button>
                   </Link>
                   <Link href="/sign-in">
-                    <Button variant="outline" size="lg" className="cursor-pointer rounded-full border-purple-300 dark:border-purple-700 text-purple-600 dark:text-purple-300 hover:bg-purple-50 dark:hover:bg-purple-900/30">
+                    <Button variant="outline" size="lg" className="cursor-pointer md:flex hidden rounded-full border-purple-300 dark:border-purple-700 text-purple-600 dark:text-purple-300 hover:bg-purple-50 dark:hover:bg-purple-900/30">
                       Watch Demo <Play className="ml-2 h-4 w-4" />
                     </Button>
                   </Link>
