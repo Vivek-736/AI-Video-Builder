@@ -1,6 +1,6 @@
 # 📹 AI Video Builder
 
-Welcome to the **AI Video Builder**! This application leverages cutting-edge technologies to help you generate and build videos with ease. 🚀
+Welcome to the **AI Video Builder**! This application leverages cutting-edge technologies to help you generate and build videos with ease. So far finished the audio generation and content generation, have to render in the form of video, contributions are encouraged to make this website alive and kicking 🚀
 
 ## 🛠️ Technologies Used
 
